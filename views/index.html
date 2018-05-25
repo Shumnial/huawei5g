@@ -1,48 +1,41 @@
-{% extends layout %}
-{% block head_section %}
-{#-
-	Include something in <head />	
--#}
-{% endblock head_section %}
-
-{% block content %}
-	<section class="section">
-		<div class="container">
-		<h1>Переменные</h1>
-		{{ Macros.Icon('i-instagram') }}
-		<ul>
-			<li>-- Инлайн ( на текущей странице ) => {{ locals.title }}</li>
-			<li>-- Локальная ( для текущей странице ) => {{ locals.description }}</li>
-			<li>-- Глобальная ( для всех страниц ) => {{ common.data.title }}</li>
-			<img src="{{ storage ~ 'images/1.png' }}" alt="">
-		</ul>
+{% extends layout %} {% block head_section %} {#- Include something in
+<head /> -#} {% endblock head_section %} {% block content %}
+<section class="section">
+  <div class="container">
+    <h1>Переменные</h1> {{ Macros.Icon('i-instagram') }}
+    <ul>
+      <li>-- Инлайн ( на текущей странице ) => {{ locals.title }}</li>
+      <li>-- Локальная ( для текущей странице ) => {{ locals.description }}</li>
+      <li>-- Глобальная ( для всех страниц ) => {{ common.data.title }}</li>
+      <img src="{{ storage ~ 'images/1.png' }}" alt="">
+    </ul>
+  </div>
+</section>
+<section class="banner">
+  <div class="container">
+    <h1 class="banner__title">
+				5G. Путь к миру без границ
+			</h1>
+  </div>
+</section>
+<section class="new-era">
+  <div class="container">
+    <div class="headings">
+      <h2 class="new-era__title title">Новая эра «5G»</h2>
+      <p class="text">Услуги передачи данных появились в эпоху 2G, выросли в эпоху 3G и диверсифицировались в эпоху 4G. 5G, показывая превосходный пользовательский интерфейс и гораздо больше возможностей, готов вступить в новую эру мобильной связи
+      </p>
+    </div>
+    <div class="new-era__content">
+    	<h3>5G соединит все и принесет пользу всем слоям общества</h3>
+    	<div class="new-era__video"></div>
+    	<div class="new-era__text"></div>
+    </div>
+  </div>
+</section>
+<section class="mission">
+	<h2 class="title">Миссия «5G»</h2>
+	<div class="mission__content">
+		<div class="mission__video"></div>
 	</div>
-	</section>
-	<section class="section">
-		<div class="container">
-			<h2 class="sr-only">Заголовок для секции только для скрин ридера</h2>
-			<div class="row">
-				<div class="col col--md-3">
-					<div class="fixed-aspect" style="background: red"></div>
-				</div>
-				<div class="col col--md-3">
-					<div class="fixed-aspect fixed-aspect--16by9" style="background: blue"></div>
-					
-				</div>
-				<div class="col col--md-3">
-					<div class="fixed-aspect fixed-aspect--4by3" style="background: green"></div>
-					
-				</div>
-				<div class="col col--md-3">
-					<div class="fixed-aspect fixed-aspect--2by1" style="background: gold"></div>
-				</div>
-			</div>
-		</div>
-	</section>
-{% endblock %}
-
-{% block footer_section %}
-	{#-
-		Include something before /body	
-	-#}
-{% endblock footer_section %}
+</section>
+{% endblock %} {% block footer_section %} {#- Include something before /body -#} {% endblock footer_section %}
