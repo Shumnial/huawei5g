@@ -11,7 +11,7 @@
 	"storage": "https://your-path-to-blob",
 	"buildIgnore": ["less", "images", "svg", "javascripts/sources"],
 	"assetsHash": true,
-	"showPageList": true,
+	"showPageList": false,
 	"exportWithExtension": ".html",
 	"exportIndexUrl": "/",
 	"themeColor": "#00bcf2",

@@ -1,41 +1,130 @@
 {% extends layout %} {% block head_section %} {#- Include something in
 <head /> -#} {% endblock head_section %} {% block content %}
-<section class="section">
-  <div class="container">
-    <h1>Переменные</h1> {{ Macros.Icon('i-instagram') }}
-    <ul>
-      <li>-- Инлайн ( на текущей странице ) => {{ locals.title }}</li>
-      <li>-- Локальная ( для текущей странице ) => {{ locals.description }}</li>
-      <li>-- Глобальная ( для всех страниц ) => {{ common.data.title }}</li>
-      <img src="{{ storage ~ 'images/1.png' }}" alt="">
-    </ul>
-  </div>
-</section>
 <section class="banner">
   <div class="container">
-    <h1 class="banner__title">
-				5G. Путь к миру без границ
-			</h1>
+    <h1 class="banner__title title">
+  		5G. Путь к миру без границ
+  	</h1>
   </div>
 </section>
+<div class="container">
+  <section class="news">
+    <div class="headings">
+      <h2 class="title">Новости</h2>
+    </div>
+    {% for rows in common.data.news %}
+    <div class="news__row">
+      {% for item in rows.items %}
+      <a href="#" class="news__item">
+				{% if item.img %}
+				<div class="news__img">
+					<img src="{{ item.img|img_asset }}" alt="">
+				</div>
+				{% endif %}
+        <p>{{ item.date }}</p>
+        <p>{{ item.title }}</p>
+      </a> {% endfor %}
+    </div>
+    {% endfor %}
+  </section>
+</div>
 <section class="new-era">
   <div class="container">
     <div class="headings">
-      <h2 class="new-era__title title">Новая эра «5G»</h2>
+      <h2 class="title">Новая эра «5G»</h2>
       <p class="text">Услуги передачи данных появились в эпоху 2G, выросли в эпоху 3G и диверсифицировались в эпоху 4G. 5G, показывая превосходный пользовательский интерфейс и гораздо больше возможностей, готов вступить в новую эру мобильной связи
       </p>
     </div>
-    <div class="new-era__content">
-    	<h3>5G соединит все и принесет пользу всем слоям общества</h3>
-    	<div class="new-era__video"></div>
-    	<div class="new-era__text"></div>
+    <div class="new-era__row">
+      <h3>5G соединит все и принесет пользу всем слоям общества</h3>
+      <div class="new-era__video"></div>
+      <div class="new-era__text"></div>
+    </div>
+  </div>
+  <section class="features">
+    <div class="container">
+      <div class="features__wrapper">
+        <img class="features__img" src="{{ 'features.jpg'|img_asset }}"> 
+        {% for column in common.data.features %}
+        <div class="features__col features__col--{{column.col}}">
+          {% for item in column.items %}
+          <div class="features__item feature">
+            <p class="feature__descr feature__descr--bold">{{ item.textBold }}</p>
+            <p class="feature__descr">{{ item.text }}</p>
+          </div>
+          {% endfor %}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+</section>
+<section class="mission">
+  <div class="container">
+    <div class="headings">
+      <h2 class="title">Миссия «5G»</h2>
+    </div>
+    <div class="mission__top mission-top">
+      <div class="mission-top__poster">
+        <img src="{{ 'ken-hu.jpg' | img_asset }}" alt="">
+      </div>
+      <div class="mission-top__column">
+        <div class="mission-top__title">5G, путь к миру без границ</div>
+        <p class="mission-top__text text">Сегодняшние новые технологии, обуждают нас мечтать о гораздо более умном и полностью связанном будущем мире. Мечты о лучшем будущем открывают беспрецедентные возможности для мобильной индустрии. Технологические инновации, особенно инновации 5G, ускоряют наши темпы в сторону лучшего мира. Широко предполагается, что ближайшее будущее в конечном итоге станет свидетельством материализации новых впечатлений и приложений, таких как беспилотный автомобиль, удаленная хирургия, виртуальная реальность и виртуальные развлечения на базе VR.</p>
+        <p class="mission-top__text text">В основной речи на Mobile World Congress 2015 в Барселоне Кен Ху, генеральный директор Huawei Rotating, поделился своим мнением: Что такое 5G? И зачем нам нужно 5G?</p>
+      </div>
+    </div>
+    <div class="mission__down mission-down">
+      {% for item in common.data.mission %}
+      <div class="mission-down__item">
+        <img src="{{ (item.url + '.jpg')|img_asset }}">
+        <div class="mission-down__name">{{ item.title }}</div>
+      </div>
+      {% endfor %}
     </div>
   </div>
 </section>
-<section class="mission">
-	<h2 class="title">Миссия «5G»</h2>
-	<div class="mission__content">
-		<div class="mission__video"></div>
-	</div>
+<section class="innovations">
+  <div class="headings">
+    <h2 class="title">Практика и инновации</h2>
+  </div>
+  <div class="innovations__list innovations-list">
+    <div class="container">
+      {% for item in common.data.innovations %}
+      <div class="innovations-list__item">
+        <img src="{{ item.src|img_asset }}" alt="Innovation">
+        <h3 class="innovations-item__title">{{ item.title }}</h3>
+        <p class="innovations-item__text">{{ item.text }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<section class="contribution">
+  <div class="container">
+    <div class="headings">
+      <h2 class="title">Вклад Huawei в&nbsp;индустрию</h2>
+      <p class="text">Вклад и&nbsp;большие усилия Huawei были признаны всей технологичной отраслью. И&nbsp;в&nbsp;каждый год Huawei удостоилась отдельной награды.</p>
+    </div>
+    <div class="contribution__row">
+      {% for item in common.data.contribution %}
+      <div class="contribution__item contribution-item">
+        <p class="contribution-item__year">{{ item.year }}</p>
+        <div class="contribution-item__img">
+          <img src="{{ item.src|img_asset }}" alt="">
+        </div>
+        <h3 class="contribution-item__title">{{ item.title }}</h3>
+        <p class="contribution-item__descr">{{ item.descr }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<section class="information">
+  <div class="container">
+    <div class="headings">
+      <h2 class="title">Информация</h2>
+    </div>
+  </div>
 </section>
 {% endblock %} {% block footer_section %} {#- Include something before /body -#} {% endblock footer_section %}
