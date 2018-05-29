@@ -1,0 +1,57 @@
+.info{
+
+	&__wrapper {
+		background-color: #f0f2f5;
+		padding-top: 50px;
+	}
+
+	&__title {
+		font-size: 36px;
+	}
+
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		max-width: 1000px;
+	}
+}
+
+.info-item {
+	width: 45%;
+}
+
+.info-item:nth-child(odd) {
+	margin-right: 10%;
+}
+
+.about-techs {
+	position: relative;
+	top: -200px;
+	min-height: 370px;
+	display: flex;
+	padding: 60px;
+	background-color: #fff;
+	box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.25);
+
+	&__col {
+		flex-basis: 30%;
+
+		&:nth-child(1) {
+			flex-grow: 1;
+			margin-right: 30px;
+		}
+	}
+
+	&__text {
+		font-size: 20px;
+	}
+
+	&__name {
+		font-size: 20px;
+		color: @red;
+	}
+
+	&__img {
+		margin-bottom: 30px;
+	}
+}

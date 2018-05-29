@@ -16,6 +16,7 @@
 	&__img {
 		position: relative;
 		width: 100%;
+		margin-bottom: 20px;
 
 		&::after {
 			content: '';
@@ -27,6 +28,16 @@
 			position: absolute;
 			width: 100%;
 			height: 100%;
+		}
+	}
+
+	@media (max-width: 768px) {
+		&__row {
+			flex-direction: column;
+		}
+
+		&__item {
+			flex-basis: auto;
 		}
 	}
 }

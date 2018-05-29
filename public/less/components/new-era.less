@@ -1,0 +1,38 @@
+.new-era{
+}
+
+.about-era {
+	position: relative;
+	z-index: 3;
+	top: 50px;
+	padding: 60px;
+	box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.25);
+	background-color: #fff;
+
+	&__poster {
+		position: relative;
+	}
+
+	&__title {
+		font-size: 24px;
+		color: @red;
+		text-align: center;
+	}
+
+	&__row {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__col {
+		flex-basis: 45%;
+
+		&:nth-child(1) {
+			margin-right: 30px;
+		}
+
+		&:nth-child(2) {
+			flex-grow: 1;
+		}
+	}
+}
